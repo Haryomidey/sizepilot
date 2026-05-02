@@ -15,7 +15,7 @@ const SettingsPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500">
       <header>
-        <h1 className="text-3xl font-bold tracking-tighter mb-2 uppercase italic leading-none">Workspace Preferences</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Workspace Preferences</h1>
         <p className="text-[#a1a1aa] text-sm font-medium">Configure global optimization behavior and privacy standards.</p>
       </header>
 

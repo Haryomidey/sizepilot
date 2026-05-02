@@ -21,7 +21,7 @@ const LandingPage: React.FC = () => {
             SizePilot
           </Link>
           <div className="flex items-center gap-6">
-            <Link to="/dashboard" className="text-xs font-bold uppercase tracking-widest text-[#52525b] hover:text-white transition-colors">Sign In</Link>
+            {/* <Link to="/login" className="text-xs font-bold uppercase tracking-widest text-[#52525b] hover:text-white transition-colors">Sign In</Link> */}
             <Button size="sm" asChild className="rounded-lg text-xs font-bold px-4">
               <Link to="/dashboard">Workspace</Link>
             </Button>
@@ -32,15 +32,6 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <section className="pt-40 pb-24 px-6 relative overflow-hidden bg-workspace">
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-surface border border-border px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest text-[#a1a1aa] mb-12"
-          >
-            <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-            <span>Precision Control Suite</span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,18 +71,6 @@ const LandingPage: React.FC = () => {
 
         {/* Ambient Grid Lines */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-      </section>
-
-      {/* Trust Panel */}
-      <section className="py-6 border-b border-border bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 opacity-30 text-[10px] font-bold uppercase tracking-[0.2em] font-mono">
-            <span className="flex items-center gap-2">PLATFORM: NATIVE</span>
-            <span className="flex items-center gap-2">ENCRYPTION: AES-256</span>
-            <span className="flex items-center gap-2">ENGINE: SIZEPOLOT V2</span>
-            <span className="flex items-center gap-2">ACCURACY: 99.9%</span>
-          </div>
-        </div>
       </section>
 
       {/* Feature Grid */}
@@ -144,10 +123,10 @@ const LandingPage: React.FC = () => {
             <div>
               <h4 className="text-[11px] font-bold uppercase tracking-widest text-white mb-6">Resources</h4>
               <ul className="space-y-3 text-[#52525b] text-xs font-medium">
-                <li><Link to="/compress-image" className="hover:text-white transition-colors">Image Engine</Link></li>
-                <li><Link to="/compress-video" className="hover:text-white transition-colors">Video Engine</Link></li>
-                <li><Link to="/compress-pdf" className="hover:text-white transition-colors">PDF Studio</Link></li>
-                <li><Link to="/batch" className="hover:text-white transition-colors">Batch Process</Link></li>
+                <li><Link to="/compress-image" className="hover:text-white transition-colors">Image Optimizer</Link></li>
+                <li><Link to="/compress-video" className="hover:text-white transition-colors">Video Compressor</Link></li>
+                <li><Link to="/compress-pdf" className="hover:text-white transition-colors">PDF Tools</Link></li>
+                <li><Link to="/batch" className="hover:text-white transition-colors">Batch Jobs</Link></li>
               </ul>
             </div>
             <div>
@@ -162,7 +141,6 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-20 pt-10 border-t border-border text-[9px] uppercase tracking-[0.2em] font-mono text-[#3f3f46] flex justify-between">
           <span>&copy; 2026 SIZEPILOT LABS</span>
-          <span>EST. MMXXIV</span>
         </div>
       </footer>
     </div>

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AICommandInput } from '../components/AICommandInput';
 import { FileUploadZone } from '../components/FileUploadZone';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
@@ -24,16 +23,6 @@ import { motion } from 'motion/react';
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const { history } = useHistory();
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleCommand = (command: string) => {
-    setIsProcessing(true);
-    // Simulate AI thinking and redirecting
-    setTimeout(() => {
-      setIsProcessing(false);
-      navigate(`/ai-command?q=${encodeURIComponent(command)}`);
-    }, 800);
-  };
 
   const handleFiles = (files: File[]) => {
     // Determine context based on file type and redirect
@@ -56,11 +45,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
-      {/* AI Command Center Section */}
-      <section>
-        <AICommandInput onCommand={handleCommand} isLoading={isProcessing} />
-      </section>
-
       {/* Stats Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {stats.map((stat, i) => (

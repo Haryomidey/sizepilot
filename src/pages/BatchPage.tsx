@@ -4,12 +4,9 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { FileUploadZone } from '../components/FileUploadZone';
 import { 
-  Layers, 
   Trash2, 
   Download, 
-  Zap,
   Loader2,
-  CheckCircle2,
   File as FileIcon
 } from 'lucide-react';
 import { formatBytes, generateId } from '../lib/utils';
@@ -117,12 +114,12 @@ const BatchPage: React.FC = () => {
     <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-500">
       <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-0">
         <div>
-          <h1 className="text-3xl font-bold tracking-tighter mb-2 uppercase italic leading-none">Batch Pipeline</h1>
-          <p className="text-[#a1a1aa] text-sm font-medium">Apply unified optimization logic across multiple asset nodes.</p>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">Batch Jobs</h1>
+          <p className="text-[#a1a1aa] text-sm font-medium">Add several files and process them together. Images are compressed; other files are prepared for download.</p>
         </div>
         {files.length > 0 && (
           <Button onClick={startBatch} disabled={isProcessing} className="w-full sm:w-auto gap-2 h-12 px-8 text-xs font-bold uppercase tracking-widest rounded-lg">
-            {isProcessing ? 'Processing Cluster' : 'Initialize Workflow'} <Zap size={16} />
+            {isProcessing ? 'Processing files...' : 'Process files'}
           </Button>
         )}
       </header>
@@ -154,13 +151,13 @@ const BatchPage: React.FC = () => {
                       {item.status === 'processing' && (
                         <div className="flex items-center gap-2 text-white font-mono text-[10px] uppercase tracking-widest">
                           <Loader2 size={12} className="animate-spin" />
-                          <span className="hidden sm:inline">Indexing...</span>
+                          <span className="hidden sm:inline">Processing...</span>
                         </div>
                       )}
                       {item.status === 'completed' && (
                         <div className="text-right">
                            <p className="text-[10px] font-bold text-white font-mono">{formatBytes(item.newSize!)}</p>
-                           <p className="text-[10px] text-green-500 font-bold font-mono">-{Math.round((1 - item.newSize! / item.file.size) * 100)}% DIFF</p>
+                           <p className="text-[10px] text-green-500 font-bold font-mono">{Math.round((1 - item.newSize! / item.file.size) * 100)}% smaller</p>
                         </div>
                       )}
                       {item.status === 'error' && (
@@ -190,13 +187,13 @@ const BatchPage: React.FC = () => {
 
            <div className="flex flex-col sm:flex-row justify-between items-center bg-surface-dim border border-border p-6 rounded-xl gap-6 sm:gap-0 text-center sm:text-left">
               <div>
-                <p className="text-[10px] text-[#52525b] uppercase tracking-[0.2em] font-bold mb-1">Queue Status</p>
-                <p className="text-lg font-bold tracking-tight uppercase">{files.length} Nodes Loaded</p>
+                <p className="text-[10px] text-[#52525b] uppercase tracking-[0.2em] font-bold mb-1">Files selected</p>
+                <p className="text-lg font-bold tracking-tight">{files.length} {files.length === 1 ? 'file' : 'files'} ready</p>
               </div>
               <div className="flex gap-4 w-full sm:w-auto">
-                <Button variant="outline" size="sm" onClick={() => setFiles([])} disabled={isProcessing} className="flex-1 sm:flex-none text-[10px] font-bold tracking-widest uppercase">Discard</Button>
+                <Button variant="outline" size="sm" onClick={() => setFiles([])} disabled={isProcessing} className="flex-1 sm:flex-none text-[10px] font-bold tracking-widest uppercase">Clear list</Button>
                 <Button variant="outline" size="sm" onClick={downloadAll} disabled={isProcessing || !files.some((item) => item.output)} className="flex-1 sm:flex-none text-[10px] font-bold tracking-widest uppercase">Download All</Button>
-                <Button variant="secondary" size="sm" onClick={() => navigate('/dashboard')} disabled={isProcessing} className="flex-1 sm:flex-none text-[10px] font-bold tracking-widest uppercase">Load More</Button>
+                <Button variant="secondary" size="sm" onClick={() => navigate('/dashboard')} disabled={isProcessing} className="flex-1 sm:flex-none text-[10px] font-bold tracking-widest uppercase">Add more</Button>
               </div>
            </div>
         </div>

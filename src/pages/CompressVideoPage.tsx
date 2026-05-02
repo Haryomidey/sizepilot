@@ -104,7 +104,7 @@ const CompressVideoPage: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-12">
       <header>
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Video Engine</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Video Compressor</h1>
         <p className="text-gray-500">Transcode and compress high-resolution video streams locally.</p>
       </header>
 

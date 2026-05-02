@@ -65,7 +65,7 @@ const CheckerPage: React.FC = () => {
     setError('');
     try {
       if (!file.type.startsWith('image/')) {
-        throw new Error('Auto-fix is currently available for images. Use PDF Studio for PDFs.');
+        throw new Error('Auto-fix is currently available for images. Use PDF Tools for PDFs.');
       }
       const preferredFormat = requirements.formats.includes('webp')
         ? 'webp'

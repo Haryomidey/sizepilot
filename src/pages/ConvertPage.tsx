@@ -78,7 +78,7 @@ const ConvertPage: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-12">
       <header>
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Transmutation Engine</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">File Converter</h1>
         <p className="text-gray-500">Switch formats effortlessly while maintaining header integrity.</p>
       </header>
 

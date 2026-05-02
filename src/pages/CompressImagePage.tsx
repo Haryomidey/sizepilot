@@ -101,7 +101,7 @@ const CompressImagePage: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-500">
       <header>
-        <h1 className="text-3xl font-bold tracking-tighter mb-2 uppercase italic leading-none">Image Core</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Image Optimizer</h1>
         <p className="text-[#a1a1aa] text-sm font-medium">Precision optimization for visual asset nodes.</p>
       </header>
 

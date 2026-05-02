@@ -79,9 +79,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </div>
           </div>
           <div className="flex items-center gap-3 lg:gap-4 shrink-0">
-            <button className="hidden sm:block text-xs text-[#a1a1aa] font-medium px-3 py-1.5 border border-[#222222] rounded-md hover:bg-[#111111] transition-colors">
-              Support
-            </button>
             <div className="w-8 h-8 rounded-full bg-[#111111] border border-[#333333]"></div>
           </div>
         </header>
@@ -102,21 +99,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           </AnimatePresence>
         </div>
 
-        {/* Status Bar */}
-        <footer className="h-10 border-t border-[#222222] bg-[#0A0A0A] flex items-center justify-between px-6 text-[10px] text-[#52525b]">
-          <div className="flex gap-6">
-            <div className="flex items-center gap-1.5">
-              <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.5)]"></div>
-              <span>AI Engine Online</span>
-            </div>
-            <span>System v2.4.1</span>
-          </div>
-          <div className="flex gap-4">
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
-            <span className="text-[#a1a1aa]">© 2026 SizePilot Inc.</span>
-          </div>
-        </footer>
       </main>
     </div>
   );

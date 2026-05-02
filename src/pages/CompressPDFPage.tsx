@@ -279,7 +279,7 @@ const CompressPDFPage: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-12">
       <header>
-        <h1 className="text-3xl font-bold tracking-tight mb-2">PDF Studio</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">PDF Tools</h1>
         <p className="text-gray-500">Professional PDF toolkit: Compress, merge, split, and sanitize.</p>
       </header>
 
@@ -486,7 +486,7 @@ const CompressPDFPage: React.FC = () => {
 
                 {result && (
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                    <Card className="p-12 text-center border-accent/20 bg-accent/1"
+                    <Card className="p-12 text-center border-accent/20 bg-accent/1">
                         <div className="flex justify-center mb-8">
                            <div className="p-4 bg-white text-black rounded-full shadow-[0_0_50px_-12px_rgba(255,255,255,0.5)]">
                              <ShieldCheck size={32} />

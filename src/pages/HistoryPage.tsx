@@ -36,7 +36,7 @@ const HistoryPage: React.FC = () => {
     <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-500">
       <header className="flex justify-between items-end">
         <div>
-          <h1 className="text-3xl font-bold tracking-tighter mb-2 uppercase italic leading-none">Operation Logs</h1>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">History</h1>
           <p className="text-[#a1a1aa] text-sm font-medium">Local optimization history nodes. Decentalized and secure.</p>
         </div>
         {history.length > 0 && (
