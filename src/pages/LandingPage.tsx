@@ -30,26 +30,26 @@ const LandingPage: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-24 px-6 relative overflow-hidden bg-workspace">
+      <section className="pt-32 sm:pt-40 pb-20 sm:pb-24 px-6 relative overflow-hidden bg-workspace">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-6xl md:text-[5.5rem] font-bold tracking-tighter mb-8 leading-[0.9] uppercase"
+            className="text-[2.5rem] sm:text-5xl md:text-[4.5rem] font-bold tracking-tight sm:tracking-tighter mb-6 sm:mb-8 leading-[0.95] sm:leading-[0.9] uppercase"
           >
-            Digital <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-border-hover">Geometric</span> <br />
-            Balance.
+            Make files <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-border-hover">smaller</span> <br />
+            without the hassle.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-base md:text-lg text-[#52525b] mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
+            className="text-sm sm:text-base md:text-lg text-[#52525b] mb-10 sm:mb-12 max-w-2xl mx-auto leading-relaxed font-medium"
           >
-            Professional file optimization workspace for modern engineering. 
-            Automate file constraints with surgical accuracy through a minimalist geometric interface.
+            Compress images, clean up PDFs, convert formats, and check file requirements from one simple workspace.
+            Your files stay in your browser.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -58,11 +58,11 @@ const LandingPage: React.FC = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button size="lg" className="w-full sm:w-auto rounded-lg text-sm font-bold h-12 px-8 uppercase tracking-widest" asChild>
-              <Link to="/dashboard">Enter Workspace</Link>
+              <Link to="/dashboard">Start now</Link>
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 group rounded-lg text-sm font-bold h-12 px-8 uppercase tracking-widest border-border" asChild>
-              <Link to="/dashboard?mode=ai">
-                AI Controller
+              <Link to="/compress-image">
+                Optimize an image
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -79,9 +79,9 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="lg:col-span-2 p-10 bg-workspace border border-border rounded-xl flex flex-col justify-between min-h-75">
               <div>
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Core Engine</h3>
-                <h2 className="text-3xl font-bold tracking-tight mb-4 leading-none uppercase">Surgical <br />Compression.</h2>
-                <p className="text-sm text-[#52525b] leading-relaxed max-w-sm">Set exact target sizes down to the KB. Perfect for government portal requirements and enterprise data limits.</p>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Compression</h3>
+                <h2 className="text-3xl font-bold tracking-tight mb-4 leading-none">Hit file size limits.</h2>
+                <p className="text-sm text-[#52525b] leading-relaxed max-w-sm">Shrink images and PDFs for forms, email attachments, uploads, and everyday sharing.</p>
               </div>
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center self-end">
                 <Maximize2 size={24} className="text-black" />
@@ -89,16 +89,16 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="p-8 bg-workspace border border-border rounded-xl group hover:border-[#3f3f46] transition-colors">
-              <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Automation</h3>
-              <h4 className="text-xl font-bold mb-3 uppercase tracking-tighter">AI Command</h4>
-              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Simple tools for resizing, compressing, and converting files without sending them to a server.</p>
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Conversion</h3>
+              <h4 className="text-xl font-bold mb-3">Change formats quickly</h4>
+              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Turn images into the format you need and keep the result ready to download.</p>
               <ArrowRight size={16} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             <div className="p-8 bg-workspace border border-border rounded-xl group hover:border-[#3f3f46] transition-colors">
               <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Privacy</h3>
-              <h4 className="text-xl font-bold mb-3 uppercase tracking-tighter">Local Stack</h4>
-              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Zero latency processing. Files stay in your browser, never hitting a server.</p>
+              <h4 className="text-xl font-bold mb-3">Works in your browser</h4>
+              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Most work happens locally, so you are not uploading personal files just to resize them.</p>
               <Zap size={16} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
@@ -116,12 +116,12 @@ const LandingPage: React.FC = () => {
               SizePilot
             </div>
             <p className="text-[#52525b] text-sm max-w-xs leading-relaxed">
-              Geometric file optimization workspace for professional engineers and creative teams.
+              Simple tools for making files easier to upload, send, and store.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-2 gap-16">
             <div>
-              <h4 className="text-[11px] font-bold uppercase tracking-widest text-white mb-6">Resources</h4>
+              <h4 className="text-[11px] font-bold uppercase tracking-widest text-white mb-6">Tools</h4>
               <ul className="space-y-3 text-[#52525b] text-xs font-medium">
                 <li><Link to="/compress-image" className="hover:text-white transition-colors">Image Optimizer</Link></li>
                 <li><Link to="/compress-video" className="hover:text-white transition-colors">Video Compressor</Link></li>
@@ -129,11 +129,11 @@ const LandingPage: React.FC = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-[11px] font-bold uppercase tracking-widest text-white mb-6">Governance</h4>
+              <h4 className="text-[11px] font-bold uppercase tracking-widest text-white mb-6">Info</h4>
               <ul className="space-y-3 text-[#52525b] text-xs font-medium">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Protocol</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Legal Terms</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Security Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
               </ul>
             </div>
           </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sizepilot.xyz/sitemap.xml
