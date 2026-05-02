@@ -15,6 +15,12 @@ export const replaceExtension = (name: string, extension: string) => {
   return `${baseName}.${extension}`;
 };
 
+const bytesToBlobPart = (bytes: Uint8Array): ArrayBuffer => {
+  const buffer = new ArrayBuffer(bytes.byteLength);
+  new Uint8Array(buffer).set(bytes);
+  return buffer;
+};
+
 export const downloadBlob = (blob: Blob, name: string) => {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
@@ -111,7 +117,7 @@ export const convertImageFile = async (file: File, format: string): Promise<Proc
     page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
     const bytes = await pdf.save();
     URL.revokeObjectURL(imageOutput.previewUrl || '');
-    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const blob = new Blob([bytesToBlobPart(bytes)], { type: 'application/pdf' });
     return {
       blob,
       name: replaceExtension(file.name, 'pdf'),
@@ -133,4 +139,3 @@ export const copyFileOutput = async (file: File, name = file.name): Promise<Proc
     previewUrl: URL.createObjectURL(blob),
   };
 };
-

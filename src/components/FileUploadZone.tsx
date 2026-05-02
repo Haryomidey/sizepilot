@@ -1,19 +1,11 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { 
-  Upload, 
-  File, 
-  ShieldCheck, 
-  Image as ImageIcon, 
-  Video, 
-  FileText 
+  Upload,
+  Image as ImageIcon,
+  Video,
+  FileText
 } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { motion } from 'motion/react';
 
 interface FileUploadZoneProps {
   onFilesSelected: (files: File[]) => void;
@@ -49,8 +41,8 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
       onDragLeave={handleDrag}
       onDrop={handleDrop}
       className={cn(
-        "relative rounded-xl border border-[#222222] transition-all duration-300 p-12 text-center flex flex-col items-center justify-center group",
-        isDragging ? "bg-[#111111] border-white" : "bg-[#0A0A0A] hover:bg-[#0d0d0d] hover:border-[#3f3f46]",
+        "relative rounded-xl border border-border transition-all duration-300 p-12 text-center flex flex-col items-center justify-center group",
+        isDragging ? "bg-surface border-white" : "bg-surface-dim hover:bg-[#0d0d0d] hover:border-[#3f3f46]",
         className
       )}
     >
@@ -63,7 +55,7 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
         }}
       />
       <div className="flex flex-col items-center gap-6">
-        <div className="w-16 h-16 rounded-full bg-[#111111] border border-[#222222] flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+        <div className="w-16 h-16 rounded-full bg-surface border border-border flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
           <Upload className="text-white" size={24} />
         </div>
         <div>
@@ -72,13 +64,13 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
         </div>
         <div className="mt-4 flex items-center gap-3">
           <div className="flex -space-x-2">
-            <div className="w-6 h-6 rounded-full bg-[#111111] border border-[#222222] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-surface border border-border flex items-center justify-center">
               <ImageIcon size={10} className="text-[#52525b]" />
             </div>
-            <div className="w-6 h-6 rounded-full bg-[#111111] border border-[#222222] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-surface border border-border flex items-center justify-center">
               <Video size={10} className="text-[#52525b]" />
             </div>
-            <div className="w-6 h-6 rounded-full bg-[#111111] border border-[#222222] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-surface border border-border flex items-center justify-center">
               <FileText size={10} className="text-[#52525b]" />
             </div>
           </div>
@@ -87,10 +79,10 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
       </div>
       
       {/* Corner Accents */}
-      <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-[#222222]"></div>
-      <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-[#222222]"></div>
-      <div className="absolute bottom-4 left-4 w-2 h-2 border-b border-l border-[#222222]"></div>
-      <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-[#222222]"></div>
+      <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-border"></div>
+      <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-border"></div>
+      <div className="absolute bottom-4 left-4 w-2 h-2 border-b border-l border-border"></div>
+      <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-border"></div>
     </div>
   );
 };

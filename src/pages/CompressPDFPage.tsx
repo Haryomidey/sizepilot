@@ -37,6 +37,12 @@ const getDownloadName = (name: string, suffix: string) => {
 
 const getPdfBytes = async (file: File) => new Uint8Array(await file.arrayBuffer());
 
+const toBlobPart = (bytes: Uint8Array): ArrayBuffer => {
+  const buffer = new ArrayBuffer(bytes.byteLength);
+  new Uint8Array(buffer).set(bytes);
+  return buffer;
+};
+
 const parsePageRanges = (value: string, pageCount: number) => {
   const trimmed = value.trim();
   if (!trimmed) return Array.from({ length: pageCount }, (_, index) => index);
@@ -230,7 +236,7 @@ const CompressPDFPage: React.FC = () => {
           ? await buildSplitPdf(primaryFile)
           : await buildCompressedPdf(primaryFile);
 
-      const blob = new Blob([output.bytes], { type: 'application/pdf' });
+      const blob = new Blob([toBlobPart(output.bytes)], { type: 'application/pdf' });
       const outputDataUrl = await blobToDataUrl(blob);
       const nextResult: PdfResult = {
         blob,

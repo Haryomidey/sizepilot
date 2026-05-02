@@ -11,10 +11,8 @@ import {
   Video, 
   FileText,
   FileCheck,
-  Plus,
   ArrowRight,
-  RefreshCcw,
-  Layers
+  RefreshCcw
 } from 'lucide-react';
 import { useHistory } from '../hooks/useStorage';
 import { formatBytes } from '../lib/utils';
@@ -25,22 +23,18 @@ const Dashboard: React.FC = () => {
   const { history } = useHistory();
 
   const handleFiles = (files: File[]) => {
-    // Determine context based on file type and redirect
-    if (files.length > 1) {
-      navigate('/batch', { state: { files } });
-      return;
-    }
+    // Send the first selected file to the matching tool.
     const file = files[0];
     if (file.type.startsWith('image/')) navigate('/compress-image', { state: { files } });
     else if (file.type.startsWith('video/')) navigate('/compress-video', { state: { files } });
     else if (file.type.includes('pdf')) navigate('/compress-pdf', { state: { files } });
-    else navigate('/batch', { state: { files } });
+    else navigate('/convert', { state: { files } });
   };
 
   const stats = [
-    { label: 'Files Processed', value: history.length, icon: FileCheck },
-    { label: 'Space Saved', value: formatBytes(history.reduce((a, b) => a + (b.originalSize - b.newSize), 0)), icon: Zap },
-    { label: 'Recent Optimizations', value: history.filter(i => i.timestamp > Date.now() - 86400000 * 7).length, icon: History },
+    { label: 'Files done', value: history.length, note: 'Total files you have processed', icon: FileCheck },
+    { label: 'Space saved', value: formatBytes(history.reduce((a, b) => a + (b.originalSize - b.newSize), 0)), note: 'Storage saved so far', icon: Zap },
+    { label: 'This week', value: history.filter(i => i.timestamp > Date.now() - 86400000 * 7).length, note: 'Files processed in the last 7 days', icon: History },
   ];
 
   return (
@@ -52,7 +46,7 @@ const Dashboard: React.FC = () => {
             <div className="text-[#a1a1aa] text-xs mb-1 uppercase tracking-widest font-bold font-mono">{stat.label}</div>
             <div className="text-2xl font-medium tracking-tight text-white">{stat.value}</div>
             <div className="text-[10px] text-[#52525b] mt-2 font-mono">
-              {i === 1 ? 'Live performance data' : 'Verified system metric'}
+              {stat.note}
             </div>
           </Card>
         ))}
@@ -115,7 +109,6 @@ const Dashboard: React.FC = () => {
             { label: 'Video', icon: Video, path: '/compress-video' },
             { label: 'PDF', icon: FileText, path: '/compress-pdf' },
             { label: 'Convert', icon: RefreshCcw, path: '/convert' },
-            { label: 'Batch', icon: Layers, path: '/batch' },
             { label: 'Checker', icon: FileCheck, path: '/checker' },
           ].map((tool) => (
             <button 

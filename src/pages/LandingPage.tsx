@@ -91,7 +91,7 @@ const LandingPage: React.FC = () => {
             <div className="p-8 bg-workspace border border-border rounded-xl group hover:border-[#3f3f46] transition-colors">
               <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#52525b] mb-4">Automation</h3>
               <h4 className="text-xl font-bold mb-3 uppercase tracking-tighter">AI Command</h4>
-              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Natural language interface for complex batch processing rules.</p>
+              <p className="text-xs text-[#52525b] leading-relaxed mb-6">Simple tools for resizing, compressing, and converting files without sending them to a server.</p>
               <ArrowRight size={16} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
@@ -126,7 +126,6 @@ const LandingPage: React.FC = () => {
                 <li><Link to="/compress-image" className="hover:text-white transition-colors">Image Optimizer</Link></li>
                 <li><Link to="/compress-video" className="hover:text-white transition-colors">Video Compressor</Link></li>
                 <li><Link to="/compress-pdf" className="hover:text-white transition-colors">PDF Tools</Link></li>
-                <li><Link to="/batch" className="hover:text-white transition-colors">Batch Jobs</Link></li>
               </ul>
             </div>
             <div>

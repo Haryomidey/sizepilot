@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Card } from '../components/Card';
@@ -130,7 +125,7 @@ const CompressVideoPage: React.FC = () => {
                     <button
                       key={res}
                       onClick={() => setResolution(res)}
-                      className={`flex-1 min-w-[60px] py-2 rounded-md text-xs font-mono border transition-all ${
+                      className={`flex-1 min-w-15 py-2 rounded-md text-xs font-mono border transition-all ${
                         resolution === res ? 'bg-white text-black border-white' : 'bg-white/5 text-gray-400 border-border'
                       }`}
                     >
@@ -203,7 +198,7 @@ const CompressVideoPage: React.FC = () => {
 
             <AnimatePresence>
               {isProcessing && (
-                <Card className="p-8 border-accent/20 bg-accent/[0.02]">
+                <Card className="p-8 border-accent/20 bg-accent/2">
                    <div className="flex items-center gap-4 mb-4">
                       <LoaderCircle />
                       <div className="flex-1">

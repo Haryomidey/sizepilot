@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { Sidebar } from '../components/Sidebar';
 import { motion, AnimatePresence } from 'motion/react';
@@ -26,7 +21,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="flex h-screen bg-[#000000] text-white overflow-hidden font-sans relative">
+    <div className="flex h-screen bg-background text-white overflow-hidden font-sans relative">
       {/* Desktop Sidebar */}
       <div className="hidden lg:block h-full">
         <Sidebar aria-label="Desktop Sidebar" />
@@ -41,19 +36,19 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-60 lg:hidden"
             />
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 w-64 z-[70] lg:hidden"
+              className="fixed inset-y-0 left-0 w-64 z-70 lg:hidden"
             >
               <Sidebar onClose={() => setIsMobileMenuOpen(false)} />
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="absolute top-4 right-[-48px] w-10 h-10 bg-black border border-[#222222] rounded-full flex items-center justify-center text-[#a1a1aa] hover:text-white"
+                className="absolute top-4 -right-12 w-10 h-10 bg-black border border-border rounded-full flex items-center justify-center text-[#a1a1aa] hover:text-white"
               >
                 <X size={20} />
               </button>
@@ -62,9 +57,9 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         )}
       </AnimatePresence>
 
-      <main className="flex-1 flex flex-col bg-[#050505] min-w-0">
+      <main className="flex-1 flex flex-col bg-workspace min-w-0">
         {/* Top Header */}
-        <header className="h-16 border-b border-[#222222] flex items-center justify-between px-4 lg:px-8 shrink-0">
+        <header className="h-16 border-b border-border flex items-center justify-between px-4 lg:px-8 shrink-0">
           <div className="flex items-center gap-4 text-sm overflow-hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
@@ -79,7 +74,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </div>
           </div>
           <div className="flex items-center gap-3 lg:gap-4 shrink-0">
-            <div className="w-8 h-8 rounded-full bg-[#111111] border border-[#333333]"></div>
+            <div className="w-8 h-8 rounded-full bg-surface border border-border-hover"></div>
           </div>
         </header>
 

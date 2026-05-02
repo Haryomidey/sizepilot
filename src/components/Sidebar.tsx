@@ -11,14 +11,12 @@ import {
   Video, 
   FileText, 
   RefreshCcw, 
-  Layers, 
   History
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const workspaceItems = [
   { label: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
-  { label: 'Batch Jobs', icon: Layers, path: '/batch' },
   { label: 'History', icon: History, path: '/history' },
 ];
 

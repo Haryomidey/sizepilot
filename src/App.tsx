@@ -6,7 +6,6 @@ import AICommandPage from './pages/AICommandPage';
 import CompressImagePage from './pages/CompressImagePage';
 import CompressVideoPage from './pages/CompressVideoPage';
 import CompressPDFPage from './pages/CompressPDFPage';
-import BatchPage from './pages/BatchPage';
 import CheckerPage from './pages/CheckerPage';
 import HistoryPage from './pages/HistoryPage';
 import SettingsPage from './pages/SettingsPage';
@@ -31,7 +30,6 @@ export default function App() {
                 <Route path="compress-video" element={<CompressVideoPage />} />
                 <Route path="compress-pdf" element={<CompressPDFPage />} />
                 <Route path="convert" element={<ConvertPage />} />
-                <Route path="batch" element={<BatchPage />} />
                 <Route path="checker" element={<CheckerPage />} />
                 <Route path="history" element={<HistoryPage />} />
                 <Route path="settings" element={<SettingsPage />} />
