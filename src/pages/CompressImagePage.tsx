@@ -102,7 +102,7 @@ const CompressImagePage: React.FC = () => {
     <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-500">
       <header>
         <h1 className="text-3xl font-bold tracking-tight mb-2">Image Optimizer</h1>
-        <p className="text-[#a1a1aa] text-sm font-medium">Precision optimization for visual asset nodes.</p>
+        <p className="text-[#a1a1aa] text-sm font-medium">Resize and compress images without making them look rough.</p>
       </header>
 
       {!file ? (
@@ -114,7 +114,7 @@ const CompressImagePage: React.FC = () => {
             <Card className="p-6 space-y-8 bg-surface border-border">
               <div className="flex items-center justify-between">
                 <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#52525b] flex items-center gap-2">
-                  <Settings2 size={12} /> Parameters
+                  <Settings2 size={12} /> Image settings
                 </h3>
                 <button onClick={reset} className="text-[#3f3f46] hover:text-white transition-colors">
                   <Trash2 size={14} />
@@ -122,7 +122,7 @@ const CompressImagePage: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-[#52525b]">Quality Profile: {quality}%</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-[#52525b]">Quality: {quality}%</label>
                 <input 
                   type="range" 
                   min="1" max="100" 
@@ -132,7 +132,7 @@ const CompressImagePage: React.FC = () => {
                 />
                 <div className="flex justify-between text-[9px] text-[#3f3f46] font-mono tracking-widest uppercase">
                   <span>Efficient</span>
-                  <span>Source Match</span>
+                  <span>Best Quality</span>
                 </div>
               </div>
 

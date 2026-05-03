@@ -100,7 +100,7 @@ const CompressVideoPage: React.FC = () => {
     <div className="max-w-6xl mx-auto space-y-12">
       <header>
         <h1 className="text-3xl font-bold tracking-tight mb-2">Video Compressor</h1>
-        <p className="text-gray-500">Transcode and compress high-resolution video streams locally.</p>
+        <p className="text-gray-500">Reduce video size and choose an export format.</p>
       </header>
 
       {!file ? (
@@ -111,7 +111,7 @@ const CompressVideoPage: React.FC = () => {
             <Card className="p-6 space-y-8">
               <div className="flex items-center justify-between">
                 <h3 className="font-bold flex items-center gap-2">
-                  <Settings2 size={18} /> Stream Config
+                  <Settings2 size={18} /> Video settings
                 </h3>
                 <Button variant="ghost" size="icon" onClick={reset}>
                   <Trash2 size={16} />

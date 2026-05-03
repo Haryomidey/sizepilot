@@ -49,6 +49,7 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
       <input
         type="file"
         multiple
+        aria-label="Choose files"
         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
         onChange={(e) => {
           if (e.target.files) onFilesSelected(Array.from(e.target.files));

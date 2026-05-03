@@ -79,7 +79,7 @@ const ConvertPage: React.FC = () => {
     <div className="max-w-6xl mx-auto space-y-12">
       <header>
         <h1 className="text-3xl font-bold tracking-tight mb-2">File Converter</h1>
-        <p className="text-gray-500">Switch formats effortlessly while maintaining header integrity.</p>
+        <p className="text-gray-500">Convert images to the format you need.</p>
       </header>
 
       {!file ? (
@@ -88,7 +88,7 @@ const ConvertPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
            <Card className="p-8 space-y-8">
               <h3 className="font-bold flex items-center gap-3">
-                <RefreshCcw size={20} /> Transformation Logic
+                <RefreshCcw size={20} /> Conversion options
               </h3>
               
               <div className="flex items-center gap-6">

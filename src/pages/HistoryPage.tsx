@@ -37,12 +37,12 @@ const HistoryPage: React.FC = () => {
       <header className="flex justify-between items-end">
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">History</h1>
-          <p className="text-[#a1a1aa] text-sm font-medium">Local optimization history nodes. Decentalized and secure.</p>
+          <p className="text-[#a1a1aa] text-sm font-medium">Files you have processed on this device.</p>
         </div>
         {history.length > 0 && (
           <Button variant="ghost" onClick={clearHistory} className="text-[#52525b] hover:text-white text-[10px] uppercase font-bold tracking-widest">
             <Trash2 size={12} className="mr-2" />
-            Wipe Storage
+            Clear history
           </Button>
         )}
       </header>
@@ -51,7 +51,7 @@ const HistoryPage: React.FC = () => {
          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3f3f46]" size={16} />
          <input 
            type="text" 
-           placeholder="Search metadata indices..."
+           placeholder="Search history..."
            value={searchTerm}
            onChange={(e) => setSearchTerm(e.target.value)}
            className="w-full bg-surface-dim border border-border rounded-xl pl-12 pr-4 py-4 focus:border-white outline-none transition-all text-sm placeholder:text-[#3f3f46] font-medium"
@@ -64,10 +64,10 @@ const HistoryPage: React.FC = () => {
              {/* Header - Desktop Only */}
              <div className="p-4 hidden md:grid grid-cols-12 text-[9px] uppercase font-bold tracking-[0.2em] text-[#52525b] border-b border-border">
                 <div className="col-span-1">Tag</div>
-                <div className="col-span-5 flex items-center gap-2">Node Identifier <ArrowUpDown size={8} /></div>
+                <div className="col-span-5 flex items-center gap-2">File name <ArrowUpDown size={8} /></div>
                 <div className="col-span-2">Efficiency</div>
-                <div className="col-span-2">Final Mass</div>
-                <div className="col-span-2 text-right">Operations</div>
+                <div className="col-span-2">Final size</div>
+                <div className="col-span-2 text-right">Actions</div>
              </div>
              {filtered.map((item) => (
                 <div key={item.id} className="p-4 md:p-6 flex flex-col md:grid md:grid-cols-12 md:items-center hover:bg-white/5 border border-border transition-colors group gap-4 md:gap-0">
@@ -130,7 +130,7 @@ const HistoryPage: React.FC = () => {
         ) : (
           <div className="p-32 text-center text-[#3f3f46]">
             <HistoryIcon size={32} className="mx-auto mb-4 opacity-10" />
-            <p className="text-[10px] uppercase font-bold tracking-widest">Metadata cache empty</p>
+            <p className="text-[10px] uppercase font-bold tracking-widest">No history yet</p>
           </div>
         )}
       </Card>
